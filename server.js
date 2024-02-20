@@ -17,3 +17,15 @@ mongoose
     console.log(error.message);
     process.exit(1);
   });
+
+
+  // Sergii     GeZ3SIUFrS09oG2P
+// npm install mongoose --save
+// npm i dotenv
+// npm i jsonwebtoken
+// npm i bcrypt
+
+// npm install --save multer
+// npm i gravatar
+// npm i jimp
+//npm i @sendgrid/mail
