@@ -1,3 +1,3 @@
-import { getDrlSrv } from "./index.js";
+import { getDrlSrv, addDrlSrv } from "./getInfoByAvtoSrv.js";
 
-export { getDrlSrv };
+export { getDrlSrv, addDrlSrv };

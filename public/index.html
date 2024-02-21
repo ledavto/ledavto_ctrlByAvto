@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
-    <h1>Hi from statics!!!</h1>
+    <h1>Контроллер DRL !!!</h1>
+    <ul></ul>
+    <button>Добавить</button>
   </body>
+  <script>
+    const btn = document.querySelector("button");
+    const list = document.querySelector("ul");
+
+    btn &&
+      btn.addEventListener("click", async (event) => {
+        const res = await fetch("http://localhost:3000/controllers/drl");
+
+        if (!res.ok) return;
+
+        const data = await res.json();
+
+        const listDrl = data
+          .map((item) => {
+            // `<li class="list-item new"></li>`;
+            console.log(item.brandAvto);
+          })
+          .Join("");
+
+        // list.insertAdjacentHTML("beforeend", listDrl);
+
+        console.log(">>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(data);
+        console.log("<<<<<<<<<<<<<<<<<<<<<<<");
+
+        // document.querySelector("button").innerText = data.msg + "!!";
+      });
+  </script>
 </html>

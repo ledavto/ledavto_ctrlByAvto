@@ -2,7 +2,25 @@ import { Schema, model } from "mongoose";
 import Joi from "joi";
 import { compare, genSalt, hash } from "bcrypt";
 
-const drlSchema = new Schema({}, { versionKey: false, timestamps: true });
+const drlSchema = new Schema(
+  {
+    brandAvto: {
+      type: String,
+      required: [true, "Set name for Brand"],
+    },
+    modelAvto: {
+      type: String,
+      required: [true, "Set name for Model"],
+    },
+    versionDrl: {
+      type: String,
+      required: [true, "Set name for Version"],
+    },
+    urlSchema: { type: String },
+    comment: { type: String },
+  },
+  { versionKey: false, timestamps: true }
+);
 
 // drlSchema.pre("save", async function (next) {
 //   if (!this.isModified("password")) return next();

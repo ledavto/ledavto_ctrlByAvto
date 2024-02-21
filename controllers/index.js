@@ -1,3 +1,3 @@
-import { getDrlCtrl } from "./getInfoByAvto.js";
+import { getDrlCtrl, addDrlCtrl } from "./getInfoByAvto.js";
 
-export { getDrlCtrl };
+export { getDrlCtrl, addDrlCtrl };

@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
 import multer from "multer";
 import path from "path";
-import { getDrlCtrl } from "./controllers/index.js";
+import controllersRouter from "./routes/controllersRouter.js";
 
 const uploadDir = path.join(process.cwd(), "public", "images");
 // const storeImage = path.join(process.cwd(), 'images');
@@ -52,7 +52,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.use("/controllers", getDrlCtrl);
+app.use("/controllers", controllersRouter);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });
