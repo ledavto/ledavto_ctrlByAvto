@@ -8,12 +8,13 @@
   </head>
   <body>
     <h1>Контроллер DRL !!!</h1>
+    <select name="cars_1"></select>
     <ul></ul>
     <button>Добавить</button>
   </body>
   <script>
     const btn = document.querySelector("button");
-    const list = document.querySelector("ul");
+    const list = document.querySelector("select");
 
     btn &&
       btn.addEventListener("click", async (event) => {
@@ -22,21 +23,23 @@
         if (!res.ok) return;
 
         const data = await res.json();
+        let brandOld = "";
 
         const listDrl = data
           .map((item) => {
-            // `<li class="list-item new"></li>`;
-            console.log(item.brandAvto);
+            let itemCombobox = "";
+
+            if (brandOld != item.brandAvto) {
+              itemCombobox = `<optgroup label="${item.brandAvto}">`;
+            }
+            brandOld = item.brandAvto;
+            return (
+              itemCombobox + `<option value="1">${item.modelAvto}</option>`
+            );
           })
-          .Join("");
+          .join("");
 
-        // list.insertAdjacentHTML("beforeend", listDrl);
-
-        console.log(">>>>>>>>>>>>>>>>>>>>>>>");
-        console.log(data);
-        console.log("<<<<<<<<<<<<<<<<<<<<<<<");
-
-        // document.querySelector("button").innerText = data.msg + "!!";
+        list.insertAdjacentHTML("beforeend", listDrl);
       });
   </script>
 </html>

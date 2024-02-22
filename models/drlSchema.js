@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import Joi from "joi";
+import Joi, { boolean } from "joi";
 import { compare, genSalt, hash } from "bcrypt";
 
 const drlSchema = new Schema(
@@ -18,6 +18,13 @@ const drlSchema = new Schema(
     },
     urlSchema: { type: String },
     comment: { type: String },
+    visible: { type: Boolean, default: false },
+    // owner: {type: Types.ObjectId},
+    owner: {
+      name: String,
+      address: [String], // тип - масив рядків
+      birthday: Date,
+    },
   },
   { versionKey: false, timestamps: true }
 );
