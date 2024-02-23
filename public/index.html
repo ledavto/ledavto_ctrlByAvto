@@ -9,7 +9,7 @@
   <body>
     <h1>Контроллер DRL !!!</h1>
     <select name="cars_1"></select>
-    <ul></ul>
+    <p></p>
     <button>Добавить</button>
   </body>
   <script>
@@ -34,12 +34,18 @@
             }
             brandOld = item.brandAvto;
             return (
-              itemCombobox + `<option value="1">${item.modelAvto}</option>`
+              itemCombobox +
+              `<option value="${item.versionDrl}">${item.modelAvto}</option>`
             );
           })
           .join("");
-
         list.insertAdjacentHTML("beforeend", listDrl);
       });
+
+    list.addEventListener("change", async (event) => {
+      document.querySelector(
+        "p"
+      ).innerHTML = `<p>${event.currentTarget.value}</p>`;
+    });
   </script>
 </html>
