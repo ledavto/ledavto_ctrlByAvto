@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
-    <h1>Контроллер DRL !!!</h1>
-    <select name="cars_1"></select>
+    <h1>Контроллер Half_light - дальний в пол накала !!!</h1>
+    <label>Выбери автомобиль </label
+    ><select name="cars"></select>
     <p></p>
-    <button>Добавить</button>
+    <button>Загрузить</button>
   </body>
   <script>
     const btn = document.querySelector("button");
@@ -45,7 +46,7 @@
     list.addEventListener("change", async (event) => {
       document.querySelector(
         "p"
-      ).innerHTML = `<p>${event.currentTarget.value}</p>`;
+      ).innerHTML = `<p>Версия: ${event.currentTarget.value}</p>`;
     });
   </script>
 </html>
