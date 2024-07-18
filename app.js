@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
 const dotenv = require("dotenv");
-const controllersRouter = require("./routes/index.js");
+const controllersRouter = require("./routes/controllersRouter.js");
 
 dotenv.config();
 // dotenv.config({ path: process.env.NODE_ENV === "production" ? "./.env" : });
