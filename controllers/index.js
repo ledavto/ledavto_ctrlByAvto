@@ -1,4 +1,4 @@
-import { getDrlCtrl, addDrlCtrl } from "./getInfoByAvto.js";
-import { addLongPovCtrl } from "./longPovCtrl.js";
+const { getDrlCtrl, addDrlCtrl } = require("./getInfoByAvto.js");
+const { addLongPovCtrl } = require("./longPovCtrl.js");
 
-export { getDrlCtrl, addDrlCtrl, addLongPovCtrl };
+module.exports = { getDrlCtrl, addDrlCtrl, addLongPovCtrl };

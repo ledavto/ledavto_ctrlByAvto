@@ -1,5 +1,5 @@
-import { HttpError } from "../helpers/index.js";
-import { addDrlSrv, getDrlSrv } from "../services/index.js";
+const { HttpError } = require("../helpers/index.js");
+const { addDrlSrv, getDrlSrv } = require("../services/index.js");
 
 const getDrlCtrl = async (req, res, next) => {
   try {
@@ -25,4 +25,4 @@ const addDrlCtrl = async (req, res, next) => {
   } catch (error) {}
 };
 
-export { getDrlCtrl, addDrlCtrl };
+module.exports = { getDrlCtrl, addDrlCtrl };

@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-import Joi from "joi";
+const { Schema, model } = require("mongoose");
+const Joi = require("joi");
 
 const longPovSchema = new Schema(
   {
@@ -40,4 +40,4 @@ const schema = { addLongPovSchema };
 
 const Longpov = model("longpov", longPovSchema);
 
-export { Longpov, schema };
+module.exports = { Longpov, schema };

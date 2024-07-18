@@ -1,13 +1,15 @@
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
-import dotenv from "dotenv";
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-import mongoose from "mongoose";
+const multer = require("multer");
+const path = require("path");
+const dotenv = require("dotenv");
+const controllersRouter = require("./routes/index.js");
 
-import multer from "multer";
-import path from "path";
-import controllersRouter from "./routes/controllersRouter.js";
+dotenv.config();
+// dotenv.config({ path: process.env.NODE_ENV === "production" ? "./.env" : });
 
 const uploadDir = path.join(process.cwd(), "public", "images");
 // const storeImage = path.join(process.cwd(), 'images');
@@ -29,9 +31,6 @@ const upload = multer({
 });
 
 const app = express();
-
-dotenv.config();
-// dotenv.config({ path: process.env.NODE_ENV === "production" ? "./.env" : });
 
 const { DB_HOST, PORT } = process.env; // Из файла .env
 
@@ -55,7 +54,7 @@ app.use(express.static("public"));
 app.use("/controllers", controllersRouter);
 
 app.use((_, res) => {
-  res.status(404).json({ message: "Route not found" });
+  res.status(404).json({ message: "Route not found 123" });
 });
 
 app.use((err, req, res, next) => {

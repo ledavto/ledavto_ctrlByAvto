@@ -1,5 +1,5 @@
-import HttpError from "./HttpError.js";
-import {validateBody} from "./validateBody.js";
-import { sendEmail } from "./sendEmail.js";
+const HttpError = require("./HttpError.js");
+const { validateBody } = require("./validateBody.js");
+const { sendEmail } = require("./sendEmail.js");
 
-export { HttpError, validateBody, sendEmail };
+module.exports = { HttpError, validateBody, sendEmail };

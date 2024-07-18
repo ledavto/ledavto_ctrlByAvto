@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
-import Joi from "joi";
-import { compare, genSalt, hash } from "bcrypt";
+const { Schema, model } = require("mongoose");
+const Joi = require("joi");
+const { compare, genSalt, hash } = require("bcrypt");
 
 const drlSchema = new Schema(
   {
@@ -59,4 +59,4 @@ const schema = { addDrlSchema };
 
 const Drl = model("drl", drlSchema);
 
-export { Drl, schema };
+module.exports = { Drl, schema };

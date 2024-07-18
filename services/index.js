@@ -1,4 +1,4 @@
-import { getDrlSrv, addDrlSrv } from "./getInfoByAvtoSrv.js";
-import { addLongPovSrv } from "./longPovSrv.js";
+const { getDrlSrv, addDrlSrv } = require("./getInfoByAvtoSrv.js");
+const { addLongPovSrv } = require("./longPovSrv.js");
 
-export { getDrlSrv, addDrlSrv, addLongPovSrv };
+module.exports = { getDrlSrv, addDrlSrv, addLongPovSrv };

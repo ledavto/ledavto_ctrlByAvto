@@ -1,4 +1,4 @@
-import { Drl } from "../models/drlSchema.js";
+const { Drl } = require("../models/drlSchema.js");
 
 async function getDrlSrv() {
   //Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
@@ -11,4 +11,4 @@ async function addDrlSrv(data) {
   return resAddDb;
 }
 
-export { getDrlSrv, addDrlSrv };
+module.exports = { getDrlSrv, addDrlSrv };

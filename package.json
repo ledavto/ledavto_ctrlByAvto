@@ -27,7 +27,6 @@
   "main": "app.js",
   "keywords": [],
   "author": "",
-  "type": "module",
   "license": "ISC",
   "description": ""
 }

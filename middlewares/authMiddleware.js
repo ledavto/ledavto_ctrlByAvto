@@ -1,8 +1,8 @@
-import multer from "multer";
-import path from "path";
-import { HttpError } from "../helpers/index.js";
-import { checkToken, getUserSrv } from "../services/user/index.js";
-import { nanoid } from "nanoid";
+const multer = require("multer");
+const path = require("path");
+const { HttpError } = require("../helpers/index.js");
+const { checkToken, getUserSrv } = require("../services/user/index.js");
+const { nanoid } = require("nanoid");
 
 const protect = async (req, res, next) => {
   try {
@@ -55,4 +55,4 @@ const uploadAvatar = multer({
   },
 }).single("File");
 
-export { protect, uploadAvatar };
+module.exports = { protect, uploadAvatar };

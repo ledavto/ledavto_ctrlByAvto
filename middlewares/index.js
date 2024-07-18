@@ -1,3 +1,3 @@
-import { protect, uploadAvatar } from "./authMiddleware.js";
+const { protect, uploadAvatar } = require("./authMiddleware.js");
 
-export { protect, uploadAvatar };
+module.exports = { protect, uploadAvatar };
