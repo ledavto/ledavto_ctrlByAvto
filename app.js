@@ -49,7 +49,8 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
+console.log(__dirname + "/public");
 
 app.use("/controllers", controllersRouter);
 
@@ -61,3 +62,13 @@ app.use((err, req, res, next) => {
   const { status = 500, message = "Server error" } = err;
   res.status(status).json({ message });
 });
+
+// Sergii     GeZ3SIUFrS09oG2P
+// npm install mongoose --save
+// npm i dotenv
+// npm i jsonwebtoken
+
+// npm install --save multer
+// npm i gravatar
+// npm i jimp
+// npm i @sendgrid/mail
