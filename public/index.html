@@ -20,8 +20,8 @@
     btn &&
       btn.addEventListener("click", async (event) => {
         const res = await fetch(
-          "http://localhost:3000/controllers/drl"
-          // "http://led-avto.com.ua/ctrlByAvto/controllers/drl"
+          // "http://localhost:3000/controllers/drl"
+          "http://led-avto.com.ua/ctrlByAvto/drl"
         );
 
         if (!res.ok) return;

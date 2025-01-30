@@ -6,7 +6,6 @@ const {
 } = require("../controllers/index.js");
 
 const controllersRouter = express.Router();
-console.log("zfdfdfhdfg");
 
 //controllersRouter.use(protect);
 controllersRouter.get("/drl", getDrlCtrl);

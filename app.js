@@ -34,6 +34,8 @@ const app = express();
 
 const { DB_HOST, PORT } = process.env; // Из файла .env
 
+// console.log(DB_HOST);
+
 mongoose
   .connect(DB_HOST)
   .then(() => {
@@ -50,12 +52,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use(express.static(__dirname + "/public"));
-console.log(__dirname + "/public");
+// console.log(__dirname + "/public");
 
-app.use("/controllers", controllersRouter);
+app.use("/ctrlByAvto", controllersRouter);
 
 app.use((_, res) => {
-  res.status(404).json({ message: "Route not found 123" });
+  res.status(404).json({ message: "Route not found" });
 });
 
 app.use((err, req, res, next) => {
