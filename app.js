@@ -51,7 +51,7 @@ app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(__dirname + "/public"));
+app.use("/static", express.static(path.join(__dirname, "public")));
 // console.log(__dirname + "/public");
 
 app.use("/ctrlByAvto", controllersRouter);
